@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://gchp5nt8nbur"]
+
+[node name="HUD" type="CanvasLayer"]
+offset = Vector2(2.08165e-12, 2.08165e-12)
+transform = Transform2D(1, 0, 0, 1, 2.08165e-12, 2.08165e-12)
+
+[node name="HealthBar" type="CanvasGroup" parent="."]
+position = Vector2(-114, 698)
+metadata/_edit_group_ = true
+
+[node name="HealthLabel" type="Label" parent="HealthBar"]
+offset_left = 162.0
+offset_top = -16.0
+offset_right = 284.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(1, 0.21268, 0.159695, 1)
+theme_override_font_sizes/font_size = 32
+text = "Health"
+uppercase = true
+
+[node name="HealthValue" type="Label" parent="HealthBar"]
+unique_name_in_owner = true
+offset_left = 329.0
+offset_top = -16.0
+offset_right = 440.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(1, 0.211765, 0.160784, 1)
+theme_override_font_sizes/font_size = 32
+text = "100
+"
+uppercase = true
+
+[node name="EnergyBar" type="CanvasGroup" parent="."]
+position = Vector2(1044, 700)
+metadata/_edit_group_ = true
+
+[node name="EnergyLabel" type="Label" parent="EnergyBar"]
+offset_left = 107.0
+offset_top = -22.0
+offset_right = 230.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0.517647, 0.909804, 1)
+theme_override_font_sizes/font_size = 32
+text = "Energy
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="EnergyValue" type="Label" parent="EnergyBar"]
+offset_left = 252.0
+offset_top = -21.0
+offset_right = 345.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0.517647, 0.909804, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+uppercase = true
+
+[node name="Notification" type="CanvasGroup" parent="."]
+position = Vector2(38, 492)
+
+[node name="NotificationInfo" type="RichTextLabel" parent="Notification"]
+offset_left = 25.0
+offset_top = 405.0
+offset_right = 725.0
+offset_bottom = 445.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 20

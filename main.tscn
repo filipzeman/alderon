@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwo5n4s0u5xig"]
+
+[ext_resource type="PackedScene" uid="uid://dvbx3kotn2ksf" path="res://tile_map.tscn" id="1_mcefc"]
+[ext_resource type="Script" path="res://main.gd" id="1_nfbsu"]
+[ext_resource type="PackedScene" uid="uid://c206tmol63adq" path="res://player.tscn" id="2_w34uf"]
+[ext_resource type="PackedScene" uid="uid://gchp5nt8nbur" path="res://Scenes/hud.tscn" id="3_4jxeu"]
+[ext_resource type="PackedScene" uid="uid://btdbrin8c30h5" path="res://Scenes/pause_menu.tscn" id="5_notql"]
+
+[sub_resource type="Gradient" id="Gradient_r4tk0"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.110517, 0.816399)
+colors = PackedColorArray(0.144063, 0.144063, 0.144063, 1, 0.0361927, 0.272537, 0.574959, 1, 1, 1, 0.321569, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fhrad"]
+seed = 7
+frequency = 0.2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jhcyy"]
+width = 500
+height = 500
+color_ramp = SubResource("Gradient_r4tk0")
+noise = SubResource("FastNoiseLite_fhrad")
+
+[node name="main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_nfbsu")
+noise_height_text = SubResource("NoiseTexture2D_jhcyy")
+
+[node name="Player" parent="." instance=ExtResource("2_w34uf")]
+position = Vector2(452, 245)
+
+[node name="TileMap" parent="." instance=ExtResource("1_mcefc")]
+position = Vector2(447, 223)
+
+[node name="HUD" parent="." instance=ExtResource("3_4jxeu")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_notql")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = 124.0
+offset_right = 215.0
+offset_bottom = 124.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(447, 235)

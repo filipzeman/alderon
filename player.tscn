@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://c206tmol63adq"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_32eov"]
+[ext_resource type="Texture2D" uid="uid://cvnq841jqc78j" path="res://Art/main_char_animated_halved.png" id="2_kcwse"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpsbj"]
+radius = 7.28011
+
+[sub_resource type="Animation" id="Animation_dk0v2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_m8ysd"]
+resource_name = "main_character_default"
+length = 2.7
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 2.3, 2.4, 2.5, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6jvji"]
+_data = {
+"RESET": SubResource("Animation_dk0v2"),
+"main_character_default": SubResource("Animation_m8ysd")
+}
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+safe_margin = 0.001
+script = ExtResource("1_32eov")
+player_health = 50
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_tpsbj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-5, -10)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6jvji")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2.5)
+scale = Vector2(1, 1.07812)
+texture = ExtResource("2_kcwse")
+hframes = 12
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.105614, 0.105614, 0.105614, 1)
+energy = 2.0
+max_distance = 100.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
