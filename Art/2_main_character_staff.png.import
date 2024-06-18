@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvnq841jqc78j"
-path="res://.godot/imported/main_char_animated_halved.png-164c52d4792001aeaeb01de4dfda912f.ctex"
+uid="uid://dmam40jfp7lve"
+path="res://.godot/imported/2_main_character_staff.png-6ecb73da3c8cf07b5a1a5ebe64a4c0cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/main_char_animated_halved.png"
-dest_files=["res://.godot/imported/main_char_animated_halved.png-164c52d4792001aeaeb01de4dfda912f.ctex"]
+source_file="res://Art/2_main_character_staff.png"
+dest_files=["res://.godot/imported/2_main_character_staff.png-6ecb73da3c8cf07b5a1a5ebe64a4c0cd.ctex"]
 
 [params]
 

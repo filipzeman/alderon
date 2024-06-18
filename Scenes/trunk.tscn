@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5rt47pk41sjo"]
+
+[ext_resource type="Texture2D" uid="uid://dqbspqvl6uhrx" path="res://Art/3_treetrunk_home.png" id="1_xy77y"]
+
+[node name="Trunk" type="StaticBody2D"]
+top_level = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xy77y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+top_level = true
+position = Vector2(-52, -39)
+polygon = PackedVector2Array(70, 112, 122, 89, 88, 37, -9, -5, -46, 43)

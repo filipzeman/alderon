@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="entityResource" load_steps=3 format=3 uid="uid://d2lf5vbgxgfsa"]
 
-[ext_resource type="Script" path="res://Scripts/EntityResourceBase.gd" id="1_ee5tp"]
+[ext_resource type="Script" path="res://Scripts/entity_resource_base.gd" id="1_ee5tp"]
 [ext_resource type="Texture2D" uid="uid://beytcdjjkq6j" path="res://icon.svg" id="2_kejl3"]
 
 [resource]

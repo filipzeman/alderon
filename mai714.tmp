@@ -1,32 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwo5n4s0u5xig"]
+[gd_scene load_steps=6 format=3 uid="uid://dwo5n4s0u5xig"]
 
+[ext_resource type="PackedScene" uid="uid://dvbx3kotn2ksf" path="res://tile_map.tscn" id="1_mcefc"]
 [ext_resource type="Script" path="res://main.gd" id="1_nfbsu"]
-[ext_resource type="PackedScene" uid="uid://c206tmol63adq" path="res://Scenes/player.tscn" id="2_w34uf"]
-[ext_resource type="PackedScene" uid="uid://b5rt47pk41sjo" path="res://Scenes/trunk.tscn" id="3_2rdvl"]
+[ext_resource type="PackedScene" uid="uid://c206tmol63adq" path="res://player.tscn" id="2_w34uf"]
 [ext_resource type="PackedScene" uid="uid://gchp5nt8nbur" path="res://Scenes/hud.tscn" id="3_4jxeu"]
-[ext_resource type="PackedScene" uid="uid://dvbx3kotn2ksf" path="res://Scenes/farmTilemap.tscn" id="4_xgkkj"]
 [ext_resource type="PackedScene" uid="uid://btdbrin8c30h5" path="res://Scenes/pause_menu.tscn" id="5_notql"]
 
 [node name="main" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(1, 1)
 script = ExtResource("1_nfbsu")
 
 [node name="Player" parent="." instance=ExtResource("2_w34uf")]
 unique_name_in_owner = true
-position = Vector2(486, 286)
+position = Vector2(452, 245)
 
-[node name="Trunk" parent="." instance=ExtResource("3_2rdvl")]
-position = Vector2(319, 144)
-
-[node name="TileMap" parent="." instance=ExtResource("4_xgkkj")]
+[node name="TileMap" parent="." instance=ExtResource("1_mcefc")]
 unique_name_in_owner = true
 position = Vector2(447, 223)
 
 [node name="HUD" parent="." instance=ExtResource("3_4jxeu")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_notql")]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

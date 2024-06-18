@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c206tmol63adq"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_32eov"]
-[ext_resource type="Texture2D" uid="uid://cvnq841jqc78j" path="res://Art/main_char_animated_halved.png" id="2_kcwse"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_b2c5o"]
+[ext_resource type="Texture2D" uid="uid://dmam40jfp7lve" path="res://Art/2_main_character_staff.png" id="2_6q6yh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tpsbj"]
 radius = 7.28011
@@ -49,11 +49,10 @@ _data = {
 z_index = 1
 y_sort_enabled = true
 safe_margin = 0.001
-script = ExtResource("1_32eov")
-player_health = 50
+script = ExtResource("1_b2c5o")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(2, 24)
 shape = SubResource("CircleShape2D_tpsbj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -73,12 +72,6 @@ libraries = {
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2.5)
 scale = Vector2(1, 1.07812)
-texture = ExtResource("2_kcwse")
-hframes = 12
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(0.105614, 0.105614, 0.105614, 1)
-energy = 2.0
-max_distance = 100.0
+texture = ExtResource("2_6q6yh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

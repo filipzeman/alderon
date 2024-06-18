@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8qaytufb6y8f"]
+
+[ext_resource type="Script" path="res://Scripts/generate_world.gd" id="1_tr7ym"]
+
+[node name="Wilderness" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+script = ExtResource("1_tr7ym")
