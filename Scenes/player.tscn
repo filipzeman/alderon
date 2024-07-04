@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c206tmol63adq"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_b2c5o"]
-[ext_resource type="Texture2D" uid="uid://dmam40jfp7lve" path="res://Art/2_main_character_staff.png" id="2_6q6yh"]
+[ext_resource type="Texture2D" uid="uid://b04cfdrmtohjy" path="res://Art/main_character/2.1_main_character_staff.png" id="2_ivsja"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tpsbj"]
 radius = 7.28011
@@ -46,13 +46,12 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 1
 y_sort_enabled = true
 safe_margin = 0.001
 script = ExtResource("1_b2c5o")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(2, 24)
+position = Vector2(0, 23)
 shape = SubResource("CircleShape2D_tpsbj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -72,6 +71,6 @@ libraries = {
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2.5)
 scale = Vector2(1, 1.07812)
-texture = ExtResource("2_6q6yh")
+texture = ExtResource("2_ivsja")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

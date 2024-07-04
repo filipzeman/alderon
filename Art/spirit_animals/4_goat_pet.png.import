@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc835vjwv11mb"
-path="res://.godot/imported/ch1_plants_wip.png-fe9a08ce29ed5251dee3f169e39ec27c.ctex"
+uid="uid://fi5hbb8sppu1"
+path="res://.godot/imported/4_goat_pet.png-84977d3665775f971982008fd50816b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/ch1_plants_wip.png"
-dest_files=["res://.godot/imported/ch1_plants_wip.png-fe9a08ce29ed5251dee3f169e39ec27c.ctex"]
+source_file="res://Art/spirit_animals/4_goat_pet.png"
+dest_files=["res://.godot/imported/4_goat_pet.png-84977d3665775f971982008fd50816b0.ctex"]
 
 [params]
 

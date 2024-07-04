@@ -4,11 +4,11 @@ extends Node
 #var seconds : int = 0
 var minutes : int = 0
 var hours : int = 0
-var days : int = 0
+var days : int = 10
 var months : int = 0
 var years : int = 0
 #1 ingame minute = 1 realtime second, 1 ingame hour = 24 realtime minutes
-var multiplier : int = 1 
+var multiplier : int = 100 
 
 # Define timer node
 @onready var timer: Timer = Timer.new()
@@ -32,6 +32,8 @@ func _on_Timer_timeout():
 	if hours >= 24:
 		hours = 0
 		days += 1
+
+		FarmState.update_phase()
 
 	# Check for end of month
 	if days >= month_lengths[months]:

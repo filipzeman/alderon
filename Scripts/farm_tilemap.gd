@@ -1,8 +1,7 @@
 extends TileMap
 
 @onready var player = $"../Player"
-@onready var plant_seed_node = $"PlantSeed"
-"res://Scripts/interaction_handler.gd"
+@onready var interaction_handler = $InteractionHandler
 # in future there will be config / dictionary from where 
 # we take these information dynamically
 var flower_atlas = Vector2i(0, 0)
@@ -16,14 +15,13 @@ const main_source = 0
 
 func _ready() -> void:
 	place_boundaries()
-	pass
 
 #player interaction with tilemap
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			plant_seed_node.get_foliage_id()
-
+			var clicked_cell = local_to_map(get_local_mouse_position())
+			interaction_handler.handle_interaction(clicked_cell)
 
 func place_boundaries():
 	var offsets = [

@@ -13,3 +13,6 @@ export_presets.cfg
 .mono/
 data_*/
 addons/
+
+# Mac specific ignores
+**/.DS_Store
