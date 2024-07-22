@@ -55,7 +55,9 @@ position = Vector2(0, 23)
 shape = SubResource("CircleShape2D_tpsbj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(-5, -10)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
@@ -70,7 +72,6 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2.5)
-scale = Vector2(1, 1.07812)
 texture = ExtResource("2_ivsja")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

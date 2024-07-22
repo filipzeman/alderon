@@ -4,9 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://b5rt47pk41sjo" path="res://Scenes/trunk.tscn" id="5_pewh3"]
 
 [node name="Farm" type="Node2D"]
+y_sort_enabled = true
 
 [node name="FarmTilemap" parent="." instance=ExtResource("1_ks8l6")]
-position = Vector2(427, -820)
+position = Vector2(619, 242)
 
 [node name="Trunk" parent="." instance=ExtResource("5_pewh3")]
-position = Vector2(298, 158)
+position = Vector2(-1, 10)

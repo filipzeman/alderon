@@ -1,43 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwo5n4s0u5xig"]
+[gd_scene load_steps=3 format=3 uid="uid://dwo5n4s0u5xig"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_nfbsu"]
-[ext_resource type="PackedScene" uid="uid://c206tmol63adq" path="res://Scenes/player.tscn" id="2_w34uf"]
-[ext_resource type="PackedScene" uid="uid://b5rt47pk41sjo" path="res://Scenes/trunk.tscn" id="3_2rdvl"]
-[ext_resource type="PackedScene" uid="uid://gchp5nt8nbur" path="res://Scenes/hud.tscn" id="3_4jxeu"]
-[ext_resource type="PackedScene" uid="uid://dvbx3kotn2ksf" path="res://Scenes/farmTilemap.tscn" id="4_xgkkj"]
 [ext_resource type="PackedScene" uid="uid://btdbrin8c30h5" path="res://Scenes/pause_menu.tscn" id="5_notql"]
 
-[node name="main" type="Node2D"]
-y_sort_enabled = true
-position = Vector2(1, 1)
+[node name="SceneLoader" type="Node2D"]
 script = ExtResource("1_nfbsu")
-
-[node name="Player" parent="." instance=ExtResource("2_w34uf")]
-unique_name_in_owner = true
-z_index = 1
-position = Vector2(481, 223)
-
-[node name="Trunk" parent="." instance=ExtResource("3_2rdvl")]
-position = Vector2(319, 144)
-
-[node name="TileMap" parent="." instance=ExtResource("4_xgkkj")]
-unique_name_in_owner = true
-position = Vector2(447, 223)
-layer_1/tile_data = PackedInt32Array(-3, 3, 0, 524286, 5, 1, 327683, 5, 1, -458757, 5, 1, -524289, 5, 1, -393209, 5, 1, -524281, 5, 1, -393208, 5, 1, 393205, 5, 1, 458741, 5, 1, 720885, 5, 1, 589814, 5, 1, 393207, 5, 1, -458760, 5, 1, 720888, 5, 1, 589817, 5, 1, -589829, 5, 1, -524293, 5, 1, 524283, 5, 1, -393220, 5, 1, -589827, 5, 1, -196610, 5, 1, 720894, 5, 1, -393217, 5, 1, -327681, 5, 1, 655359, 5, 1, 393217, 5, 1, 327682, 5, 1, 589826, 5, 1, 524291, 5, 1, -524284, 5, 1, -65531, 5, 1, 65541, 5, 1, 262149, 5, 1, 458757, 5, 1, 524293, 5, 1, 589829, 5, 1, 196614, 5, 1, -655353, 5, 1, -196601, 5, 1, -131065, 5, 1, 524295, 5, 1, 589831, 5, 1, -655352, 5, 1, -589816, 5, 1, -327672, 5, 1, 458760, 5, 1, -196599, 5, 1, -524298, 5, 1, -524299, 5, 1, -458763, 5, 1, -589834, 5, 1, -524297, 5, 1, 655368, 5, 1, 196617, 5, 1, -393213, 5, 1)
-
-[node name="HUD" parent="." instance=ExtResource("3_4jxeu")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_notql")]
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 215.0
-offset_top = 124.0
-offset_right = 215.0
-offset_bottom = 124.0
-scale = Vector2(0.5, 0.5)
-size_flags_horizontal = 3
-size_flags_vertical = 3

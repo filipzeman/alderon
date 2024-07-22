@@ -5,7 +5,7 @@ offset = Vector2(2.08165e-12, 2.08165e-12)
 transform = Transform2D(1, 0, 0, 1, 2.08165e-12, 2.08165e-12)
 
 [node name="HealthBar" type="CanvasGroup" parent="."]
-position = Vector2(-114, 698)
+position = Vector2(-129, 26)
 metadata/_edit_group_ = true
 
 [node name="HealthLabel" type="Label" parent="HealthBar"]
@@ -31,7 +31,7 @@ text = "100
 uppercase = true
 
 [node name="EnergyBar" type="CanvasGroup" parent="."]
-position = Vector2(1044, 700)
+position = Vector2(662, 37)
 metadata/_edit_group_ = true
 
 [node name="EnergyLabel" type="Label" parent="EnergyBar"]

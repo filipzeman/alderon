@@ -14,6 +14,14 @@ enum foliageType {
 	grass
 }
 
+enum sceneType {
+	farm,
+	wilderness,
+	intro
+}
+
+var current_scene = sceneType.farm
+
 var player_default_stamina:int = 100
 var player_default_health:int = 100
 var player_default_speed:int = 140

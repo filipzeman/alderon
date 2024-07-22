@@ -21,16 +21,26 @@ func _ready() -> void:
 	pass
 	
 
-func handle_interaction(clicked_cell):
+func handle_interaction(clicked_cell, player_position):
 	var clicked_terrain_tile_id = FarmTilemap.get_cell_source_id(Globals.layers.terrain, clicked_cell)
 	var clicked_foliage_tile_id = FarmTilemap.get_cell_source_id(Globals.layers.foliage, clicked_cell)
 	var currentSeedConfig = SeedConfiguration.new(5,Vector2i(0,1),2,3,PlantClass.SeedType.oak)
+	var isOccupied = FarmTilemap.local_to_map(player_position) == clicked_cell
+	# print(FarmTilemap.local_to_map(player_position))
+	# print(clicked_cell)
+	# print('isOccupied', isOccupied)
+	#ToDo - solve how to match player position to tile position
 
 	
 	# when there is no terrain don't do nothing
 	if clicked_terrain_tile_id == -1:
 		print('no terrain')
 		return null
+
+
+	# if player is located on the tile where user click, nothing happen
+	#if clicked_foliage_tile_id && isOccupied:
+		#return null
 
 	# no foliage & terrain is dirt - suitable for farming
 	if clicked_foliage_tile_id == -1 && clicked_terrain_tile_id == 5:
@@ -47,7 +57,7 @@ func handle_interaction(clicked_cell):
 
 func plant_seed(tile_coord: Vector2, block_id: int, atlas_coord: Vector2i ):
 	FarmTilemap.set_cell(Globals.layers.foliage, tile_coord, block_id, atlas_coord)
-	FarmState.add_item(tile_coord, 1, GlobalTimer.days, 2, 3, false, PlantClass.SeedType.hornbeam)
+	FarmState.add_item(tile_coord, 0, GlobalTimer.days, 2, 3, false, PlantClass.SeedType.hornbeam)
 	
 #func harvest_crop(tile_coord: Vector2, block_id: int, atlas_coord: Vector2i ):
 	#FarmTilemap.set_cell(Globals.layers.foliage, tile_coord, block_id, atlas_coord)

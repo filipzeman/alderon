@@ -21,7 +21,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var clicked_cell = local_to_map(get_local_mouse_position())
-			interaction_handler.handle_interaction(clicked_cell)
+			interaction_handler.handle_interaction(clicked_cell, player.global_position)
 
 func place_boundaries():
 	var offsets = [

@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 class_name PlantClass
 
@@ -17,7 +17,7 @@ enum SeedType {
 	birch,
 	hornbeam,
 	elm
-}
+} 
 
 func _init(new_calculated_milestones: Array, new_coordinates: Vector2i, new_current_growth_phase: int, new_date_of_sowing: int, new_growth_steps: int, new_growth_phase_length: int, new_is_harvestable: bool, new_seed_type: SeedType):
 	calculated_milestones = new_calculated_milestones
